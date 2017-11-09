@@ -18,7 +18,51 @@ export type ModeName = 'normal'|'insert'|'hint'
 class State {
     mode: ModeName = 'normal'
     cmdHistory: string[] = []
+    nmaps: keymaps = {
+        "o": "fillcmdline open",
+        "O": "current-url open",
+        "w": "fillcmdline winopen",
+        "W": "current-url winopen",
+        "t": "tabopen",
+        //["t": "fillcmdline tabopen", // for now, use mozilla completion
+        "]]": "clicknext", 
+        "[[": "clicknext prev", 
+        "T": "current-url tab",
+        "yy": "clipboard yank",
+        "p": "clipboard open",
+        "P": "clipboard tabopen",
+        "j": "scrollline 10",
+        "k": "scrollline -10",
+        "h": "scrollpx -50",
+        "l": "scrollpx 50",
+        "G": "scrollto 100",
+        "gg": "scrollto 0",
+        "H": "back",
+        "L": "forward",
+        "d": "tabclose",
+        "u": "undo",
+        "r": "reload",
+        "R": "reloadhard",
+        "gt": "tabnext",
+        "gT": "tabprev",
+        "gr": "reader",
+        ":": "fillcmdline",
+        "s": "fillcmdline open google",
+        "S": "fillcmdline tabopen google",
+        "xx": "something",
+        "i": "insertmode",
+        "b": "openbuffer",
+        "ZZ": "qall",
+        "f": "hint",
+        // Special keys must be prepended with 🄰
+        // ["🄰Backspace", "something"],
+    }
 }
+
+interface keymaps {
+    [key:string]: string
+}
+
 
 // Don't change these from const or you risk breaking the Proxy below.
 const defaults = Object.freeze(new State())

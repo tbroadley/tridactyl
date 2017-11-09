@@ -2,6 +2,7 @@
 
     differs from Vim in that no map may be a prefix of another map (e.g. 'g' and 'gg' cannot both be maps). This simplifies the parser.
 */
+import state from '../state'
 
 // Normal-mode mappings.
 // keystr -> ex_str
