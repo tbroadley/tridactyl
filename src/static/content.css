@@ -1,3 +1,11 @@
+:root {
+    --tridactyl-fg-colour: black;
+    --tridactyl-bg-colour: white;
+    --tridactyl-font-family: monospace;
+    --tridactyl-border-colour: lightgray;
+
+}
+
 #cmdline_iframe {
     position: fixed !important;
     bottom: 0 !important;
@@ -10,14 +18,15 @@
     margin: 0 !important;
     min-height: 0 !important;
     max-height: none !important;
+    background: var(--tridactyl-bg-colour) !important;
+    color: var(--tridactyl-fg-colour) !important;
 }
 
 .TridactylStatusIndicator {
     position: fixed !important;
     bottom: 0 !important;
-    font-family: monospace !important;
-    background: white !important;
-    border: 1.5px lightgray solid !important;
+    font-family: var(--tridactyl-font-family) !important;
+    border: 1.5px var(--tridactyl-border-colour) solid !important;
     border-radius: 2px !important;
     font-size: 12px !important;
     padding: 0.25ex !important;
@@ -29,6 +38,8 @@
     -moz-user-select: none !important;
     -ms-user-select: none !important;
     user-select: none !important;
+    background: var(--tridactyl-bg-colour) !important;
+    color: var(--tridactyl-fg-colour) !important;
 }
 
 @media print {
